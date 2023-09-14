@@ -1,6 +1,12 @@
 # Focus timer 2
 
 The goal of the project is to learn about advanced Javascript.
+
+## Dark mode
+
+## Timer
+
+## Sounds
 ## Apprenticeship
 
 - DOM manipulation;
