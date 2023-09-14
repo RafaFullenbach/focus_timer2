@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+  --bg-default: #ffffff;
+  --bg-card: #e1e1e6;
+
+  --bg-forest: #32cd32;
+  --bg-rain: #02799d;
+  --bg-fireplace: #d2691e;
+  --bg-coffee: #ac339b;
+
+  --ic-default-select: #ffffff;
+  --text-color: #323238;
+  --btn-color: #000000;
+}
+
+html.dark {
+  --bg-default: #000000;
+  --text-color: #e1e1e6;
+  --btn-color: #e1e1e6;
+}
+
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
+  display: none;
+}
+
+html.dark .ph-sun {
+  color: var(--btn-color);
+}
+
+html.dark .ph-plus,
+html.dark .ph-minus{
+  color: white;
+}
+
+html:not(.dark) .ph-plus,
+html:not(.dark) .ph-minus{
+  color: rgb(12, 12, 12);
+}
+
+body {
+  background-color: var(--bg-default);
+  display: grid;
+  place-content: center;
+
+  height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-areas: "A B";
+  gap: 19.2rem;
+  align-items: center;
+}
+
+.container {
+  grid-area: A;
+}
+
+section.controls {
+  display: flex;
+  gap: 2rem;
+}
+
+section.cards {
+  grid-area: B;
+
+  display: grid;
+  grid-template-areas:
+    "A B"
+    "C D";
+  gap: 3.2rem;
+}
+
+.toogle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+.timer span {
+  color: var(--text-color);
+  font-size: 12.6rem;
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+
+  font-size: 4.5rem;
+}
+
+.ph-play,
+.ph-pause,
+.ph-stop {
+  color: var(--btn-color);
+}
+
+.forest-path1:not(.selected),
+.rain-path1:not(.selected),
+.coffee-path1:not(.selected),
+.fireplace-path1:not(.selected) {
+  fill: var(--bg-card);
+}
+
+.forest .selected {
+  fill: var(--bg-forest);
+}
+
+.rain .selected {
+  fill: var(--bg-rain);
+}
+
+.coffee .selected {
+  fill: var(--bg-coffee);
+}
+
+.fireplace .selected {
+  fill: var(--bg-fireplace);
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.running .ph-pause,
+.running .ph-stop,
+html:not(.running) .ph-play {
+  opacity: 1;
+}
+
+html:not(.running) .ph-play {
+  color: rgb(64, 184, 94);
+}
+
+.running .ph-stop {
+  color: rgb(190, 58, 58);
+}
+
+.running .ph-pause {
+  color: rgb(49, 112, 184);
+}
+
+.running .ph-play,
+html:not(.running) .ph-pause,
+html:not(.running) .ph-stop {
+  transform: scale(1);
+  opacity: 0.5;
+}
+
+
+
